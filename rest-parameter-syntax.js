@@ -63,4 +63,38 @@ console.log("Sum3:", sum3)
         if you have done everything correctly
 */
 
+// Initialises the array mixedLetters with the values 'b', 'd', 'a', 'c', 'f', and 'e'.
 let mixedLetters = ['b', 'd', 'a', 'c', 'f', 'e'];
+
+// Created a new array moreMixedLetters by spreading the elements of mixedLetters 
+// and adding the values 'h', 'k', 'g', 'j', 'i', and 'l'.
+let moreMixedLetters = [...mixedLetters, 'h', 'k', 'g', 'j', 'i', 'l'];
+
+// Outputs the contents of the moreMixedLetters array to the console.
+console.log(moreMixedLetters);
+
+// I defined an arrow function named updateSortReverse that takes two 
+// parameters: arr (an array) and letters 
+// (using rest parameter syntax to collect multiple arguments as an array)
+const updateSortReverse = (arr, ...letters) => {
+    // Combines all arguments into a single array.
+    let combinedArray = [...arr, ...letters];
+    // Sorts this combined array in ascending order.
+    let sortedArray = combinedArray.sort();
+    // Reverses the sorted array.
+    let reversedArray = sortedArray.reverse();
+    // Returns the sorted and reversed array.
+    return reversedArray;
+};
+
+// Calling the Arrow Function
+let reverseSort = updateSortReverse(moreMixedLetters, 'n', 'm', 'o');
+
+// Outputs the contents of the reverseSort array to the console.
+console.log(reverseSort);
+
+/* 
+    Outputs the contents of the original mixedLetters array 
+    to confirm that it has not been changed by the operations performed.
+*/
+console.log(mixedLetters);
